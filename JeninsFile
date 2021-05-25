@@ -1,0 +1,28 @@
+// Pipeline declarativo
+pipeline {
+    // Ejecutar desde cualquier agente (nodo) disponible
+    agent any
+    // Fases
+    stages {
+        stage("Build") {
+            // Passos de la fase
+            steps {
+                echo "Building artefact";
+            }
+        }
+        stage("Testing") {
+            // Pasos de la fase
+            steps {
+                echo "Test Unitarios...";
+                echo "Test Integración...";
+                echo "Test Aceptación...";
+            }
+        }
+        stage("Deploy") {
+            // Passos de la fase
+            steps {
+                echo "Desploying artefact!";
+            }
+        }
+    }
+}
